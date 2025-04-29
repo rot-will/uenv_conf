@@ -72,6 +72,7 @@ function parse_options(){
                 exit 0
         fi
         GROUP=$(get_user_group)
+        USER_HOME=$(sudo -u $USER sh -c 'echo $HOME')
         for opt in "${arguments[@]}"; do
                 command_run $opt
                 if [ $? -eq 2 ]; then
