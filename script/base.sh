@@ -105,17 +105,17 @@ function rust_lang(){
     check_dir /work/tools/rust/rustup
     check_dir /work/tools/rust/cargo
 
-    export RUSTUP_HOME=/work/tools/rust/rustup
-    export CARGO_HOME=/work/tools/rust/cargo
+    export RUSTUP_HOME=$USER_HOME/.rustup
+    export CARGO_HOME=$USER_HOME/.cargo
 
     sudo -u $USER ./rust.sh -y --no-modify-path
     if [ $? -ne 0 ]; then
         error "Failed to install rust"
         return 1
     fi
-    echo 'export PATH=$PATH:/work/tools/rust/cargo/bin' > /work/profile/rust.sh
-    echo 'export RUSTUP_HOME=/work/tools/rust/rustup' >> /work/profile/rust.sh
-    echo 'export CARGO_HOME=/work/tools/rust/cargo' >> /work/profile/rust.sh
+    echo "export PATH=\$PATH:$USER_HOME/cargo/bin" > /work/profile/rust.sh
+    echo "export RUSTUP_HOME=$USER_HOME/.rustup" >> /work/profile/rust.sh
+    echo "export CARGO_HOME=$USER_HOME/.cargo" >> /work/profile/rust.sh
     chmod +x /work/profile/rust.sh
 
     set_config rust_install
