@@ -113,7 +113,7 @@ function rust_lang(){
         error "Failed to install rust"
         return 1
     fi
-    echo "export PATH=\$PATH:$USER_HOME/cargo/bin" > /work/profile/rust.sh
+    echo "export PATH=\$PATH:$USER_HOME/.cargo/bin" > /work/profile/rust.sh
     echo "export RUSTUP_HOME=$USER_HOME/.rustup" >> /work/profile/rust.sh
     echo "export CARGO_HOME=$USER_HOME/.cargo" >> /work/profile/rust.sh
     chmod +x /work/profile/rust.sh
