@@ -27,7 +27,7 @@ function init_install(){
         check_dir /work/profile && \
         echo 'for i in $(ls /work/profile)' >> /etc/bash.bashrc && \
         echo 'do ' >> /etc/bash.bashrc && \
-        echo '. /work/profile/\$i' >> /etc/bash.bashrc && \
+        echo '. /work/profile/$i' >> /etc/bash.bashrc && \
         echo 'done' >> /etc/bash.bashrc && \
         echo '#!/bin/sh' > /work/profile/init.sh && \
         echo 'export PATH=$PATH:/work/bin' >> /work/profile/init.sh && \
