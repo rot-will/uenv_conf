@@ -116,7 +116,7 @@ function rust_lang(){
     echo 'export PATH=$PATH:/work/tools/rust/cargo/bin' > /work/profile/rust.sh
     echo 'export RUSTUP_HOME=/work/tools/rust/rustup' >> /work/profile/rust.sh
     echo 'export CARGO_HOME=/work/tools/rust/cargo' >> /work/profile/rust.sh
-    chown +x /work/profile/rust.sh
+    chmod +x /work/profile/rust.sh
 
     set_config rust_install
     success rust_installed
